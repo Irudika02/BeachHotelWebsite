@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azure Coast Resort | Luxury Beach Hotel Sri Lanka | Best Resort in Unawatuna</title>
+    <meta name="description"
+        content="Experience ultimate luxury at Azure Coast Resort, a premier beach hotel in Sri Lanka. Stunning ocean views, fine dining, and world-class hospitality in Unawatuna. Book your dream vacation today.">
+    <meta name="keywords"
+        content="beach hotel Sri Lanka, luxury resort Unawatuna, Sri Lanka beach holiday, Azure Coast Resort, boutique hotel Sri Lanka, best hotel near Galle">
+    <link rel="canonical" href="https://azurecoast.lk/index.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://azurecoast.lk/">
+    <meta property="og:title" content="Azure Coast Resort | Luxury Beach Hotel Sri Lanka">
+    <meta property="og:description"
+        content="Experience ultimate luxury at Azure Coast Resort. Stunning ocean views, fine dining, and world-class hospitality in Unawatuna.">
+    <meta property="og:image" content="https://azurecoast.lk/images/hero.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://azurecoast.lk/">
+    <meta property="twitter:title" content="Azure Coast Resort | Luxury Beach Hotel Sri Lanka">
+    <meta property="twitter:description"
+        content="Experience ultimate luxury at Azure Coast Resort. Stunning ocean views, fine dining, and world-class hospitality in Unawatuna.">
+    <meta property="twitter:image" content="https://azurecoast.lk/images/hero.png">
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Azure Coast Resort",
+      "description": "A premier luxury beach hotel in Unawatuna, Sri Lanka offering stunning ocean views and world-class dining.",
+      "image": "https://azurecoast.lk/images/hero.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Beach Road",
+        "addressLocality": "Unawatuna",
+        "addressRegion": "South",
+        "postalCode": "80600",
+        "addressCountry": "LK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 6.0142,
+        "longitude": 80.2486
+      },
+      "url": "https://azurecoast.lk",
+      "telephone": "+94112345678",
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <!-- Premium Preloader -->
+    <div id="preloader"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary); z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.8s ease-out;">
+        <div style="text-align: center;">
+            <h2 class="serif"
+                style="color: var(--secondary); font-size: 2.5rem; letter-spacing: 4px; animation: pulse 2s infinite;">
+                AZURE COAST</h2>
+            <div
+                style="width: 50px; height: 2px; background: rgba(213, 170, 109, 0.3); margin: 20px auto; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: 0; left: 0; height: 100%; width: 20px; background: var(--secondary); animation: slide 1.5s infinite ease-in-out;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav id="navbar">
+        <a href="index.html" class="logo">AZURE COAST</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="menu.html">Dining</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#reviews">Reviews</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="#contact" class="btn btn-primary" style="padding: 10px 25px; font-size: 0.8rem;">Book Now</a>
+    </nav>
+
+    <section id="home" class="hero">
+        <p>Welcome to Paradise</p>
+        <h1>Unforgettable Sri Lankan Escape</h1>
+        <p>Discover the perfect blend of modern luxury and tropical serenity on the pristine shores of the Indian Ocean.
+        </p>
+        <div class="hero-btns">
+            <a href="#about" class="btn btn-primary btn-pulse">Explore More</a>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section id="offers-section" style="background: white; display: none;">
+        <div class="section-title">
+            <h2>Exclusive Packages</h2>
+            <p style="color:var(--secondary); font-weight:600; text-transform:uppercase; letter-spacing:2px;">Special
+                deals for your perfect stay</p>
+        </div>
+        <div id="dynamic-offers"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <!-- Offers loaded via JS -->
+        </div>
+    </section>
+
+    <section id="about" class="reveal">
+        <div class="section-title">
+            <p>Our Story</p>
+            <h2>Bespoke Coastal Luxury</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-image reveal-left">
+                <img src="images/hero.png" alt="Azure Coast Resort Exterior" class="hover-scale">
+            </div>
+            <div class="about-content reveal-right">
+                <h3>A Sanctuary of Calm</h3>
+                <p>Nestled along the golden sands of Sri Lanka's southern coastline, Azure Coast Resort offers a unique
+                    escape where every moment is curated for your comfort. From our infinity pools that merge with the
+                    horizon to our world-class spa treatments, we redefine the tropical getaway.</p>
+                <br>
+                <p>Whether you're seeking a romantic retreat or a family adventure, our resort provides the perfect
+                    backdrop for memories that last a lifetime.</p>
+                <br>
+                <a href="#" class="btn btn-primary">Learn Our History</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="rooms" class="reveal" style="background: #fdfaf7;">
+        <div class="section-title">
+            <p>Your Private Oasis</p>
+            <h2>Luxury Accommodations</h2>
+        </div>
+        <div class="rooms-container" id="dynamic-rooms">
+            <div class="room-card">
+                <div class="room-img" style="background-image: url('images/suite.png');"></div>
+                <div class="room-info">
+                    <span class="room-price">From $250 / Night</span>
+                    <h4>Ocean View Suite</h4>
+                    <p>Wake up to panoramic views of the Indian Ocean from your private balcony.</p>
+                    <br>
+                    <a href="rooms.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.7rem;">Explore
+                        Suites</a>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-img" style="background-image: url('images/villa.png');"></div>
+                <div class="room-info">
+                    <span class="room-price">From $650 / Night</span>
+                    <h4>Azure Family Villa</h4>
+                    <p>Perfect for families, featuring a private pool and direct beach access.</p>
+                    <br>
+                    <a href="rooms.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.7rem;">Explore
+                        Suites</a>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-img" style="background-image: url('images/cabana.png');"></div>
+                <div class="room-info">
+                    <span class="room-price">From $400 / Night</span>
+                    <h4>Honeymoon Cabana</h4>
+                    <p>Our most romantic setting, tucked away in the palm grove with an outdoor spa.</p>
+                    <br>
+                    <a href="rooms.html" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.7rem;">Explore
+                        Suites</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dining" class="reveal">
+        <div class="section-title">
+            <p>Taste the Tropics</p>
+            <h2>Culinary Journey</h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-content reveal-left">
+                <h3>Authentic Sri Lankan Flavors</h3>
+                <p>Our kitchen is a celebration of the island's rich spice heritage. Each dish is prepared using
+                    traditional recipes passed down through generations, using only the freshest local ingredients.</p>
+                <br>
+                <div class="dining-lists">
+                    <div>
+                        <h4 style="color: var(--secondary); margin-bottom: 10px;">Signature Dishes</h4>
+                        <ul style="list-style: none; font-size: 0.9rem;">
+                            <li style="margin-bottom: 8px;">• Jaffna Crab Curry</li>
+                            <li style="margin-bottom: 8px;">• Traditional Rice & Curry</li>
+                            <li style="margin-bottom: 8px;">• Fresh Lagoon Prawns</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--secondary); margin-bottom: 10px;">Classic Favorites</h4>
+                        <ul style="list-style: none; font-size: 0.9rem;">
+                            <li style="margin-bottom: 8px;">• Egg Hoppers (Aappa)</li>
+                            <li style="margin-bottom: 8px;">• Pol Sambol & Roast Paan</li>
+                            <li style="margin-bottom: 8px;">• Wattalappam Dessert</li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="menu.html" class="btn btn-primary">Explore Full Menu</a>
+            </div>
+            <div class="about-image reveal-right">
+                <img src="images/food.png" alt="Traditional Sri Lankan Food" class="dining-img hover-scale">
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="reveal" style="background: #fff;">
+        <div class="section-title">
+            <p>Guest Stories</p>
+            <h2>What Our Guests Say</h2>
+        </div>
+        <div id="dynamic-reviews"
+            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 50px;">
+            <div
+                style="background: #f8f9fa; padding: 40px; border-radius: 20px; border-left: 5px solid var(--secondary);">
+                <div style="color: var(--secondary); margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+                <p style="font-style: italic; margin-bottom: 20px;">"The best beach holiday we've ever had. The food was
+                    incredible, especially the Jaffna crab curry. The staff treated us like royalty!"</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%;"></div>
+                    <div>
+                        <h5 style="color: var(--primary);">Sarah Jenkins</h5>
+                        <small>United Kingdom</small>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="background: #f8f9fa; padding: 40px; border-radius: 20px; border-left: 5px solid var(--secondary);">
+                <div style="color: var(--secondary); margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+                <p style="font-style: italic; margin-bottom: 20px;">"Absolute paradise. The Honeymoon Cabana was so
+                    private and beautiful. We woke up to the sound of waves every morning. Highly recommended!"</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%;"></div>
+                    <div>
+                        <h5 style="color: var(--primary);">Anura & Dilini</h5>
+                        <small>Sri Lanka</small>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="background: #f8f9fa; padding: 40px; border-radius: 20px; border-left: 5px solid var(--secondary);">
+                <div style="color: var(--secondary); margin-bottom: 15px;">⭐⭐⭐⭐⭐</div>
+                <p style="font-style: italic; margin-bottom: 20px;">"Professional service and stunning views. The
+                    infinity pool is out of this world. We will definitely be coming back next year."</p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div style="width: 50px; height: 50px; background: #ddd; border-radius: 50%;"></div>
+                    <div>
+                        <h5 style="color: var(--primary);">Markus Weber</h5>
+                        <small>Germany</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+            style="max-width: 600px; margin: 0 auto; background: #f8f9fa; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+            <h3 style="text-align: center; color: var(--primary); margin-bottom: 20px;">Share Your Experience</h3>
+            <form id="review-form" style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" id="rev_name" placeholder="Your Name"
+                    style="padding: 15px; border-radius: 10px; border: 1px solid #ddd;" required>
+                <input type="text" id="rev_country" placeholder="Your Country"
+                    style="padding: 15px; border-radius: 10px; border: 1px solid #ddd;" required>
+                <textarea id="rev_text" placeholder="Write your review here..."
+                    style="padding: 15px; border-radius: 10px; border: 1px solid #ddd; height: 100px;"
+                    required></textarea>
+                <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Submit Review</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="experiences" class="reveal" style="background: #f1f5f9;">
+        <div class="section-title">
+            <p>Beyond the Shore</p>
+            <h2>Island Experiences</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+            <div class="stagger-item"
+                style="background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <div class="float-element" style="font-size: 3rem; margin-bottom: 10px;">🐋</div>
+                <h4 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 10px;">Whale
+                    Watching</h4>
+                <p>Set sail into the deep blue to witness the majestic blue whales in their natural habitat.</p>
+            </div>
+            <div class="stagger-item"
+                style="background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <div class="float-element" style="font-size: 3rem; margin-bottom: 10px;" style="animation-delay: 0.5s;">
+                    🐢</div>
+                <h4 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 10px;">Turtle
+                    Conservation</h4>
+                <p>Visit our nearby sanctuary and participate in the release of baby turtles into the ocean.</p>
+            </div>
+            <div class="stagger-item"
+                style="background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <div class="float-element" style="font-size: 3rem; margin-bottom: 10px;" style="animation-delay: 1s;">🧘
+                </div>
+                <h4 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 10px;">Daily
+                    Yoga & Spa</h4>
+                <p>Rejuvenate your mind and body with sunrise yoga on the beach and Ayurvedic spa treatments.</p>
+            </div>
+            <div class="stagger-item"
+                style="background: white; padding: 30px; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <div class="float-element" style="font-size: 3rem; margin-bottom: 10px;" style="animation-delay: 1.5s;">
+                    🏄</div>
+                <h4 style="font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 10px;">Surfing
+                    School</h4>
+                <p>Learn to ride the waves of Unawatuna with our professional surf instructors.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="reveal">
+        <div class="section-title">
+            <p>Visual Journey</p>
+            <h2>Resort Gallery</h2>
+        </div>
+        <div class="gallery-grid" id="dynamic-gallery">
+            <div class="gallery-item"><img src="images/hero.png" alt="Azure Coast Resort Entrance"></div>
+            <div class="gallery-item"><img src="images/suite.png" alt="Luxury Ocean View Suite Interior"></div>
+            <div class="gallery-item"><img src="images/food.png" alt="Exquisite Dining Experience"></div>
+            <div class="gallery-item"><img src="images/villa.png" alt="Family Villa with Private Pool"></div>
+            <div class="gallery-item"><img src="images/cabana.png" alt="Honeymoon Cabana at Sunset"></div>
+            <div class="gallery-item"
+                style="background: var(--primary); display: flex; align-items: center; justify-content: center; border-radius: 10px; color: white; text-align: center; padding: 20px;">
+                <div>
+                    <h4 style="margin-bottom: 10px;">More Moments</h4>
+                    <p style="font-size: 0.8rem;">Follow us on Instagram for daily updates</p>
+                    <br>
+                    <a href="#" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.7rem;">@azurecoast</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="reveal" style="background: #fdfaf7;">
+        <div class="section-title">
+            <p>Common Questions</p>
+            <h2>Find Your Answers</h2>
+        </div>
+        <div class="faq-container" style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+                <div class="faq-question">What is the check-in and check-out time?</div>
+                <div class="faq-answer">Check-in time is from 2:00 PM, and check-out time is until 12:00 PM. Early
+                    check-in or late check-out is subject to availability.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Does the hotel provide airport transfers?</div>
+                <div class="faq-answer">Yes, we provide luxury airport transfers from Bandaranaike International Airport
+                    (BIA). Please contact us with your flight details to arrange a pickup.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Are there any vegetarian/vegan options in the menu?</div>
+                <div class="faq-answer">Absolutely! Our menu features a wide variety of authentic Sri Lankan vegetarian
+                    and vegan dishes prepared with fresh local ingredients.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is the resort kid-friendly?</div>
+                <div class="faq-answer">Yes, we are very family-oriented. Our Family Villa is perfect for kids, and we
+                    offer a range of activities and kids' menus.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="reveal">
+        <div class="section-title">
+            <p>How to Reach Us</p>
+            <h2>Our Location</h2>
+        </div>
+        <div class="map-container"
+            style="border-radius: 20px; overflow: hidden; height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15873.344403603417!2d80.24075459385966!3d6.014264654313271!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae172f3a61f52d9%3A0x6b499e19d20c58e4!2sUnawatuna%20Beach!5e0!3m2!1sen!2slk!4v1710594248542!5m2!1sen!2slk"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <section id="contact" class="reveal" style="background: var(--primary); color: white;">
+        <div class="section-title">
+            <p style="color: var(--accent);">Get In Touch</p>
+            <h2 style="color: white;">Plan Your Stay</h2>
+        </div>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+                <input type="text" id="contact_name" placeholder="Full Name"
+                    style="padding: 15px; border-radius: 10px; border: none;" required>
+                <input type="email" id="contact_email" placeholder="Email Address"
+                    style="padding: 15px; border-radius: 10px; border: none;" required>
+                <select id="contact_room" style="padding: 15px; border-radius: 10px; border: none;">
+                    <option value="">Select Room Type</option>
+                    <option value="suite">Ocean View Suite</option>
+                    <option value="penthouse">Panorama Penthouse</option>
+                    <option value="deluxe">Garden Deluxe</option>
+                </select>
+                <textarea id="contact_message" placeholder="Special Requests"
+                    style="padding: 15px; border-radius: 10px; border: none; height: 100px;"></textarea>
+                <button type="submit" class="btn btn-primary">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="reveal" style="background: #064047; padding: 60px 10%; color: white; text-align: center;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 15px;">Subscribe for
+            Updates</h2>
+        <p style="color: #a1b8bc; margin-bottom: 30px;">Join our newsletter for exclusive offers, local events and more
+            secret escapes.</p>
+        <form id="newsletterForm"
+            style="display: flex; justify-content: center; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap;">
+            <input type="email" placeholder="Your Email Address" required
+                style="flex-grow: 1; padding: 15px; border-radius: 5px; border: none; min-width: 250px;">
+            <button type="submit" class="btn"
+                style="background: var(--secondary); color: white; border: none; padding: 15px 30px; font-weight: bold; border-radius: 5px;">Subscribe</button>
+        </form>
+    </section>
+
+    <footer style="padding: 50px 10%; background: #052c32; color: #a1b8bc; text-align: center;">
+        <h3 class="serif" style="color: white; font-size: 2rem; margin-bottom: 20px;">AZURE COAST</h3>
+        <p>123 Beach Road, Unawatuna, Sri Lanka</p>
+        <p>Phone: +94 11 234 5678 | Email: hello@azurecoast.lk</p>
+        <div style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <p>&copy; 2026 Azure Coast Resort. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/94112345678" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 448 512" width="25" height="25" fill="white">
+            <path
+                d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.2-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.6-6.5 8.3-9.7 2.8-3.3 3.7-5.6 5.5-9.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.8 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z" />
+        </svg>
+        <span>Chat with Us</span>
+    </a>
+
+    <script src="js/index.js?v=2.0"></script>
+</body>
+
+</html>

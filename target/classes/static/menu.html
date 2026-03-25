@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dining & Culinary Experience | Azure Coast Resort Unawatuna</title>
+    <meta name="description"
+        content="Savor authentic Sri Lankan flavors and fresh seafood at Azure Coast Resort. Explore our diverse menu featuring Jaffna Crab Curry and grilled lobster.">
+    <meta name="keywords"
+        content="Sri Lankan food Unawatuna, seafood restaurant Galle, best dining Unawatuna, Azure Coast menu">
+    <link rel="canonical" href="https://azurecoast.lk/menu.html">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        .menu-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/food.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .menu-section {
+            background: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 10px;
+        }
+
+        .item-info h4 {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 5px;
+        }
+
+        .item-info p {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .price {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .food-badge {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 5px;
+            margin-left: 10px;
+            text-transform: uppercase;
+        }
+
+        .badge-spicy {
+            background: #ffe3e3;
+            color: #ff0000;
+        }
+
+        .badge-veg {
+            background: #e3ffe3;
+            color: #008000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Premium Preloader -->
+    <div id="preloader"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary); z-index: 9999; display: flex; justify-content: center; align-items: center; transition: opacity 0.8s ease-out;">
+        <div style="text-align: center;">
+            <h2 class="serif"
+                style="color: var(--secondary); font-size: 2.5rem; letter-spacing: 4px; animation: pulse 2s infinite;">
+                AZURE COAST</h2>
+            <div
+                style="width: 50px; height: 2px; background: rgba(213, 170, 109, 0.3); margin: 20px auto; position: relative; overflow: hidden;">
+                <div
+                    style="position: absolute; top: 0; left: 0; height: 100%; width: 20px; background: var(--secondary); animation: slide 1.5s infinite ease-in-out;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="logo" style="color: var(--primary);">AZURE COAST</a>
+        <ul class="nav-links">
+            <li><a href="index.html" style="color: var(--text-dark);">Home</a></li>
+            <li><a href="index.html#about" style="color: var(--text-dark);">About</a></li>
+            <li><a href="rooms.html" style="color: var(--text-dark);">Rooms</a></li>
+            <li><a href="menu.html" style="color: var(--primary); font-weight: 700;">Dining</a></li>
+            <li><a href="index.html#gallery" style="color: var(--text-dark);">Gallery</a></li>
+            <li><a href="index.html#reviews" style="color: var(--text-dark);">Reviews</a></li>
+            <li><a href="index.html#faq" style="color: var(--text-dark);">FAQ</a></li>
+            <li><a href="index.html#contact" style="color: var(--text-dark);">Contact</a></li>
+        </ul>
+        <div class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <header class="menu-hero">
+        <div>
+            <h1 style="font-size: 3.5rem;">The Taste of Island</h1>
+            <p>From the ocean to your plate, naturally sourced.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="section-title">
+            <p>Our Culinary Offerings</p>
+            <h2>The Azure Menu</h2>
+            <p style="margin-top:20px; color:#666;">We also offer Vegan, Gluten-Free, and Kid-friendly options.</p>
+        </div>
+
+        <div class="menu-grid" id="dynamic-menu">
+            <div class="menu-section">
+                <h3 style="color: var(--secondary); margin-bottom: 30px; font-size: 1.8rem;">Breakfast Classics</h3>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Live Hopper Station <span class="food-badge badge-veg">Popular</span></h4>
+                        <p>Crispy rice flour crepes served with lunu miris and seeni sambol.</p>
+                    </div>
+                    <div class="price">$12</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Sri Lankan Breakfast Spread <span class="food-badge badge-spicy">Spicy</span></h4>
+                        <p>Milk rice (Kiribath), fish ambul thiyal, and spicy coconut sambol.</p>
+                    </div>
+                    <div class="price">$18</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Tropical Fruit Platter</h4>
+                        <p>Fresh papaya, mango, pineapple, and passion fruit with wild honey.</p>
+                    </div>
+                    <div class="price">$10</div>
+                </div>
+            </div>
+
+            <div class="menu-section">
+                <h3 style="color: var(--secondary); margin-bottom: 30px; font-size: 1.8rem;">Ocean's Bounty</h3>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Jaffna Lagoon Crab Curry <span class="food-badge badge-spicy">Chef's Choice</span></h4>
+                        <p>Whole crab cooked in moringa leaves and roasted curry powder.</p>
+                    </div>
+                    <div class="price">$35</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Grilled Garlic Lobster</h4>
+                        <p>Freshly caught lobster grilled with herb butter and tropical salad.</p>
+                    </div>
+                    <div class="price">$45</div>
+                </div>
+
+                <div class="menu-item">
+                    <div class="item-info">
+                        <h4>Negombo Prawn Thel Dala</h4>
+                        <p>Spicy tempered prawns with onions, capsicum, and chili flakes.</p>
+                    </div>
+                    <div class="price">$28</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="index.html#contact" class="btn btn-primary">Book a Romantic Beach Dinner</a>
+        </div>
+    </section>
+
+    <footer style="padding: 50px 10%; background: #052c32; color: #a1b8bc; text-align: center;">
+        <h3 class="serif" style="color: white; font-size: 1.5rem; margin-bottom: 20px;">AZURE COAST</h3>
+        <p>&copy; 2026 Azure Coast Resort. All rights reserved.</p>
+    </footer>
+
+    <script src="js/index.js?v=2.0"></script>
+</body>
+
+</html>

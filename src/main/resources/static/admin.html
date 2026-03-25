@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Azure Coast Resort</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #03252a;
+            --secondary: #d5aa6d;
+            --background: #f4f7f6;
+            --text-dark: #333;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--background);
+            margin: 0;
+            padding: 0;
+            color: var(--text-dark);
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: var(--primary);
+            color: white;
+            height: 100vh;
+            padding: 30px 20px;
+            position: fixed;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 40px;
+            color: var(--secondary);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover,
+        .sidebar ul li a.active {
+            background: rgba(213, 170, 109, 0.2);
+            color: var(--secondary);
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 40px;
+            width: calc(100% - 250px);
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .btn {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #b88d55;
+        }
+
+        .btn-danger {
+            background: #e63946;
+        }
+
+        .btn-danger:hover {
+            background: #c1121f;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="sidebar">
+        <h2>AZURE Admin</h2>
+        <ul>
+            <li><a href="#" class="nav-btn active" data-target="dashboard-section">📊 Dashboard</a></li>
+            <li><a href="#" class="nav-btn" data-target="inquiries-section">✉️ Inquiries</a></li>
+            <li><a href="#" class="nav-btn" data-target="rooms-section">🏨 Manage Rooms</a></li>
+            <li><a href="#" class="nav-btn" data-target="menu-section">🍽️ Dining Menu</a></li>
+            <li><a href="#" class="nav-btn" data-target="gallery-section">📸 Gallery</a></li>
+            <li><a href="#" class="nav-btn" data-target="reviews-section">⭐ Reviews</a></li>
+            <li><a href="#" class="nav-btn" data-target="offers-section">🎁 Offers</a></li>
+            <li><a href="#" class="nav-btn" data-target="subscribers-section">📧 Subscribers</a></li>
+            <li><a href="index.html" target="_blank">🌐 View Website</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+
+        <!-- Dashboard Section -->
+        <div id="dashboard-section" class="section active">
+            <div class="dashboard-header">
+                <h2>Overview Dashboard</h2>
+            </div>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 30px;">
+                <div class="card" style="text-align: center; border-left: 5px solid var(--primary);">
+                    <h3 style="color: #666; font-size: 1rem;">Total Inquiries</h3>
+                    <div id="stat-inquiries"
+                        style="font-size: 2.5rem; color: var(--primary); font-weight: bold; margin-top: 10px;">-</div>
+                </div>
+                <div class="card" style="text-align: center; border-left: 5px solid #28a745;">
+                    <h3 style="color: #666; font-size: 1rem;">Total Rooms</h3>
+                    <div id="stat-rooms"
+                        style="font-size: 2.5rem; color: #28a745; font-weight: bold; margin-top: 10px;">-</div>
+                </div>
+                <div class="card" style="text-align: center; border-left: 5px solid #ffc107;">
+                    <h3 style="color: #666; font-size: 1rem;">Menu Items</h3>
+                    <div id="stat-menu" style="font-size: 2.5rem; color: #ffc107; font-weight: bold; margin-top: 10px;">
+                        -</div>
+                </div>
+                <div class="card" style="text-align: center; border-left: 5px solid #dc3545;">
+                    <h3 style="color: #666; font-size: 1rem;">Pending Reviews</h3>
+                    <div id="stat-reviews"
+                        style="font-size: 2.5rem; color: #dc3545; font-weight: bold; margin-top: 10px;">-</div>
+                </div>
+                <div class="card" style="text-align: center; border-left: 5px solid #17a2b8;">
+                    <h3 style="color: #666; font-size: 1rem;">Active Offers</h3>
+                    <div id="stat-offers"
+                        style="font-size: 2.5rem; color: #17a2b8; font-weight: bold; margin-top: 10px;">-</div>
+                </div>
+                <div class="card" style="text-align: center; border-left: 5px solid #6c757d;">
+                    <h3 style="color: #666; font-size: 1rem;">Subscribers</h3>
+                    <div id="stat-subscribers"
+                        style="font-size: 2.5rem; color: #6c757d; font-weight: bold; margin-top: 10px;">-</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inquiries Section -->
+        <div id="inquiries-section" class="section">
+            <div class="dashboard-header">
+                <h2>Customer Inquiries</h2>
+            </div>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Room Info</th>
+                            <th>Message</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inquiries-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Rooms Section -->
+        <div id="rooms-section" class="section">
+            <div class="dashboard-header">
+                <h2>Manage Rooms</h2>
+            </div>
+
+            <div class="card">
+                <h3>Add New Room</h3>
+                <form id="add-room-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group">
+                            <label>Room Name</label>
+                            <input type="text" id="r_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Price ($)</label>
+                            <input type="number" id="r_price" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Image Path (e.g. images/room.png)</label>
+                        <input type="text" id="r_image" value="images/suite.png" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <textarea id="r_desc" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Save Room</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Current Rooms</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rooms-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Menu Section -->
+        <div id="menu-section" class="section">
+            <div class="dashboard-header">
+                <h2>Dining Menu</h2>
+            </div>
+            <div class="card">
+                <h3>Add Menu Item</h3>
+                <form id="add-menu-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group"><label>Item Name</label><input type="text" id="m_name" required></div>
+                        <div class="form-group"><label>Price ($)</label><input type="text" id="m_price" required></div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group"><label>Category</label><input type="text" id="m_cat"
+                                value="Breakfast Classics" required></div>
+                        <div class="form-group"><label>Image URL</label><input type="text" id="m_image"
+                                value="images/food.png"></div>
+                    </div>
+                    <div class="form-group"><label>Tags</label>
+                        <input type="checkbox" id="m_veg"> Vegetarian &nbsp;&nbsp;
+                        <input type="checkbox" id="m_spicy"> Spicy
+                    </div>
+                    <div class="form-group"><label>Description</label><textarea id="m_desc" rows="2"
+                            required></textarea></div>
+                    <button type="submit" class="btn">Save Item</button>
+                </form>
+            </div>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="menu-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div id="gallery-section" class="section">
+            <div class="dashboard-header">
+                <h2>Gallery</h2>
+            </div>
+            <div class="card">
+                <form id="add-gallery-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group"><label>Title</label><input type="text" id="g_title" required></div>
+                        <div class="form-group"><label>Image URL</label><input type="text" id="g_url" required></div>
+                    </div>
+                    <button type="submit" class="btn">Add to Gallery</button>
+                </form>
+            </div>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Preview</th>
+                            <th>Title</th>
+                            <th>URL</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="gallery-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Reviews Section -->
+        <div id="reviews-section" class="section">
+            <div class="dashboard-header">
+                <h2>Customer Reviews</h2>
+            </div>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Author</th>
+                            <th>Country</th>
+                            <th>Review</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reviews-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Offers Section -->
+        <div id="offers-section" class="section">
+            <div class="dashboard-header">
+                <h2>Special Offers</h2>
+            </div>
+            <div class="card">
+                <h3>Add Offer</h3>
+                <form id="add-offer-form">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div class="form-group"><label>Title (e.g. Summer Getaway)</label><input type="text"
+                                id="o_title" required></div>
+                        <div class="form-group"><label>Discount (e.g. 20% OFF)</label><input type="text" id="o_discount"
+                                required></div>
+                    </div>
+                    <div class="form-group"><label>Image URL</label><input type="text" id="o_image"
+                            value="images/hero.png" required></div>
+                    <div class="form-group"><label>Description</label><textarea id="o_desc" rows="2"
+                            required></textarea></div>
+                    <button type="submit" class="btn">Save Offer</button>
+                </form>
+            </div>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Title</th>
+                            <th>Discount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="offers-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Subscribers Section -->
+        <div id="subscribers-section" class="section">
+            <div class="dashboard-header">
+                <h2>Newsletter Subscribers</h2>
+            </div>
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Email Address</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscribers-table-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js?v=2.0"></script>
+</body>
+
+</html>
