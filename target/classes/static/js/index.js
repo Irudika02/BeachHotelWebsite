@@ -12,7 +12,7 @@ function safeFetch(url, options = {}) {
         throw err;
     });
 }
-
+window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         setTimeout(() => {
@@ -463,8 +463,12 @@ function initNewsletter() {
     }
 }
 
-// Initialize all dynamic parts
-loadDynamicContent();
-initReviewForm();
-initNewsletter();
+// Initialize all dynamic parts with safety wrapper
+try {
+    loadDynamicContent();
+    initReviewForm();
+    initNewsletter();
+} catch (e) {
+    console.warn("Dynamic content failed to load, likely due to backend being offline:", e);
+}
 
