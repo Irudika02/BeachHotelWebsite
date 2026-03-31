@@ -371,10 +371,13 @@ nav.scrolled .menu-btn span {
     }
 
     .hero {
-        padding: 180px 15px 80px;
+        padding-top: 250px !important;
+        padding-bottom: 80px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
         min-height: 100vh;
-        height: auto;
-        justify-content: center;
+        height: auto !important;
+        justify-content: flex-start !important;
     }
 
     .hero h1 {
