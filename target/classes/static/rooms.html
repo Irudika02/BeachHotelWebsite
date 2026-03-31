@@ -63,6 +63,27 @@
             align-items: center;
             gap: 10px;
         }
+
+        @media (max-width: 992px) {
+            .room-detail-card {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                direction: ltr !important;
+            }
+
+            .room-detail-card:nth-child(even),
+            .room-detail-card:nth-child(odd) {
+                direction: ltr !important;
+            }
+
+            .room-detail-card:nth-child(even) .room-text {
+                direction: ltr !important;
+            }
+
+            .room-image-large img {
+                height: 350px;
+            }
+        }
     </style>
 </head>
 
