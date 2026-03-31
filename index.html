@@ -106,8 +106,29 @@
         <h1>Unforgettable Sri Lankan Escape</h1>
         <p>Discover the perfect blend of modern luxury and tropical serenity on the pristine shores of the Indian Ocean.
         </p>
-        <div class="hero-btns">
-            <a href="#about" class="btn btn-primary btn-pulse">Explore More</a>
+        <!-- Famous Hotel Feature: Quick Booking Widget -->
+        <div class="booking-widget-container">
+            <form class="booking-widget" onsubmit="event.preventDefault(); alert('Redirecting to booking engine...');">
+                <div class="booking-field">
+                    <label>Check In</label>
+                    <input type="date" required>
+                </div>
+                <div class="booking-field">
+                    <label>Check Out</label>
+                    <input type="date" required>
+                </div>
+                <div class="booking-field">
+                    <label>Guests</label>
+                    <select required>
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4+">4+ Guests</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary" style="padding: 15px 30px; font-size: 0.9rem;">Check
+                    Availability</button>
+            </form>
         </div>
     </section>
 

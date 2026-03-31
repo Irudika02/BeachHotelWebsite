@@ -334,6 +334,10 @@ nav.scrolled .menu-btn span {
         display: flex;
     }
 
+    .nav-links.active~.menu-btn span {
+        background: var(--primary) !important;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -579,9 +583,86 @@ nav.scrolled .menu-btn span {
     }
 }
 
-/* --- Advanced Animations --- */
+/* --- Premium Booking Widget Add-on --- */
+.booking-widget-container {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 50px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    animation: fadeInUp 1s forwards 1s;
+    opacity: 0;
+    transform: translateY(30px);
+    width: 100%;
+    max-width: 900px;
+    z-index: 10;
+}
 
-/* Keyframes */
+.booking-widget {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.booking-field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex: 1;
+    min-width: 150px;
+}
+
+.booking-field label {
+    font-size: 0.8rem;
+    color: var(--secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.booking-field input,
+.booking-field select {
+    border: none;
+    border-bottom: 2px solid #eee;
+    padding: 5px 0;
+    font-size: 1rem;
+    font-family: 'Outfit', sans-serif;
+    color: var(--primary);
+    background: transparent;
+    outline: none;
+    transition: var(--transition);
+}
+
+.booking-field input:focus,
+.booking-field select:focus {
+    border-bottom-color: var(--secondary);
+}
+
+.booking-widget button {
+    flex: 1;
+    min-width: 200px;
+}
+
+@media (max-width: 768px) {
+    .booking-widget-container {
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .booking-field {
+        min-width: 100%;
+    }
+
+    .booking-widget button {
+        width: 100%;
+    }
+}
+
+/* --- Advanced Animations --- */
 @keyframes fadeInUp {
     from {
         opacity: 0;
