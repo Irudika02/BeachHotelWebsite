@@ -20,4 +20,14 @@ public class HomeController {
     public String menu() {
         return "forward:/menu.html";
     }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return "forward:/admin.html";
+    }
+
+    @GetMapping("/login")
+    public String login() {
+        return "forward:/login.html";
+    }
 }
