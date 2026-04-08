@@ -158,7 +158,8 @@
         <form id="loginForm" onsubmit="event.preventDefault(); handleLogin();">
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter username" required>
+                <input type="text" id="username" name="username" placeholder="Enter username" autocapitalize="none"
+                    required>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
@@ -178,7 +179,7 @@
         }
 
         function handleLogin() {
-            const user = document.getElementById('username').value;
+            const user = document.getElementById('username').value.trim().toLowerCase();
             const pass = document.getElementById('password').value;
 
             // Allow login to proceed for static preview if user uses 'admin'/'admin123'
