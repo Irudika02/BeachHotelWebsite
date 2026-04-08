@@ -17,45 +17,48 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(csrf -> csrf.disable())
-                .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/", "/index.html", "/rooms", "/rooms.html", "/menu", "/menu.html", "/css/**",
-                                "/js/**", "/images/**")
-                        .permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/inquiries", "/api/subscribers", "/api/reviews")
-                        .permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/rooms", "/api/menu", "/api/gallery", "/api/reviews",
-                                "/api/offers")
-                        .permitAll()
-                        .requestMatchers("/admin", "/admin.html").hasRole("ADMIN")
-                        .requestMatchers("/api/**").hasRole("ADMIN")
-                        .anyRequest().authenticated())
-                .formLogin(form -> form
-                        .loginPage("/login")
-                        .defaultSuccessUrl("/admin", true)
-                        .permitAll())
-                .logout(logout -> logout
-                        .logoutSuccessUrl("/")
-                        .permitAll());
+        @Bean
+        public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+                http
+                                .csrf(csrf -> csrf.disable())
+                                .authorizeHttpRequests(auth -> auth
+                                                .requestMatchers("/", "/index.html", "/rooms", "/rooms.html", "/menu",
+                                                                "/menu.html", "/login.html", "/css/**",
+                                                                "/js/**", "/images/**")
+                                                .permitAll()
+                                                .requestMatchers(HttpMethod.POST, "/api/inquiries", "/api/subscribers",
+                                                                "/api/reviews")
+                                                .permitAll()
+                                                .requestMatchers(HttpMethod.GET, "/api/rooms", "/api/menu",
+                                                                "/api/gallery", "/api/reviews",
+                                                                "/api/offers")
+                                                .permitAll()
+                                                .requestMatchers("/admin", "/admin.html").hasRole("ADMIN")
+                                                .requestMatchers("/api/**").hasRole("ADMIN")
+                                                .anyRequest().authenticated())
+                                .formLogin(form -> form
+                                                .loginPage("/login")
+                                                .defaultSuccessUrl("/admin", true)
+                                                .permitAll())
+                                .logout(logout -> logout
+                                                .logoutSuccessUrl("/")
+                                                .permitAll());
 
-        return http.build();
-    }
+                return http.build();
+        }
 
-    @Bean
-    public UserDetailsService userDetailsService() {
-        UserDetails admin = User.builder()
-                .username("admin")
-                .password(passwordEncoder().encode("admin123"))
-                .roles("ADMIN")
-                .build();
-        return new InMemoryUserDetailsManager(admin);
-    }
+        @Bean
+        public UserDetailsService userDetailsService() {
+                UserDetails admin = User.builder()
+                                .username("admin")
+                                .password(passwordEncoder().encode("admin123"))
+                                .roles("ADMIN")
+                                .build();
+                return new InMemoryUserDetailsManager(admin);
+        }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
+        @Bean
+        public PasswordEncoder passwordEncoder() {
+                return new BCryptPasswordEncoder();
+        }
 }
